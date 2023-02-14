@@ -1,3 +1,24 @@
 [submodule "pdraw"]
 	path = pdraw
 	url = git@github.com:aviborg/pdraw.git
+[submodule "libfutils"]
+	path = libfutils
+	url = git@github.com:aviborg/libfutils.git
+[submodule "libpomp"]
+	path = libpomp
+	url = git@github.com:aviborg/libpomp.git
+[submodule "libmedia-buffers"]
+	path = libmedia-buffers
+	url = git@github.com:aviborg/libmedia-buffers.git
+[submodule "libvideo-defs"]
+	path = libvideo-defs
+	url = git@github.com:aviborg/libvideo-defs.git
+[submodule "libvideo-metadata"]
+	path = libvideo-metadata
+	url = git@github.com:aviborg/libvideo-metadata.git
+[submodule "libh265"]
+	path = libh265
+	url = git@github.com:aviborg/libh265.git
+[submodule "libh264"]
+	path = libh264
+	url = git@github.com:aviborg/libh264.git
