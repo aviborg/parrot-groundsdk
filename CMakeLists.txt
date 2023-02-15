@@ -17,8 +17,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}")
 add_subdirectory(libulog)
 add_subdirectory(libpomp)
 add_subdirectory(libfutils)
+add_subdirectory(libh264)
+add_subdirectory(libh265)
 add_subdirectory(libmedia-buffers)
 add_subdirectory(libvideo-defs)
+add_subdirectory(libvideo-metadata)
 
 target_link_libraries(parrot-client 
                         PUBLIC 
