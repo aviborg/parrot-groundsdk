@@ -1,16 +1,39 @@
-# parrot-client
+# parrot-groundsdk
+
+This is an adaptation of the parrot groundsdk to run on Windows. But as CMake is used it should compile on Linux too, not tested though.
+This has been done:
+- Some code fixes
+- Most of the work has been to translate the make files to Cmake build files
+
+Running CMake on the top level creates an ```parrot-client.exe``` for test purposes
+
+Mingw-x64 gcc must be installed and used. Below is a good guide to follow. Consider installing VSCode too.
 
 https://code.visualstudio.com/docs/cpp/config-mingw
 
-https://stackoverflow.com/questions/70197831/unable-to-determine-what-cmake-generator-to-use-vs-code-windows-10
+You also need to add the MingW-CMake:
+```bash
+pacman -S mingw-w64-x86_64-cmake
+```
 
+Then you need vcpkg and some packages. How to install vcpkg is described [here](https://github.com/Microsoft/vcpkg/) but it is just a few powershell commands.
 
-https://github.com/Microsoft/vcpkg/
-.\vcpkg.EXE install json-c protobuf-c[tools] eigen3 --triplet=x64-windows
+Microsoft recommend vcpkg to be installed somewhere like C:\src\vcpkg or C:\dev\vcpkg, since otherwise you may run into path issues for some port build systems.
+```powershell
+mkdir [path to vcpkg]
+cd [path to vcpkg]
+git clone https://github.com/microsoft/vcpkg
+.\vcpkg\bootstrap-vcpkg.bat
+.\vcpkg.exe install json-c eigen3 --triplet=x64-windows
 .\vcpkg.exe install ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale]:x64-windows
-
+```
+Take some coffee as the above will take a while.
+```powershell
+.\vcpkg.exe install protobuf-c[tools]
+```
 If it fails (see here: https://github.com/microsoft/vcpkg/issues/29677)
-do this patch in your vcpkg directory
+
+Then do this patch in your vcpkg directory.
 ```git
 diff --git a/ports/protobuf-c/portfile.cmake b/ports/protobuf-c/portfile.cmake
 index 0a972cb27..4bcce7017 100644
@@ -26,11 +49,33 @@ index 0a972cb27..4bcce7017 100644
      )
  endif()
 ```
+and run again
+```powershell
+.\vcpkg.exe install protobuf-c[tools]
+```
+Then run
+```powershell
+.\vcpkg.exe integrate install
+```
 
-https://github.com/microsoft/vcpkg/issues/28446
+if you had the above issue with protobuf-c, add ```[path to vcpkg]\installed\x64-windows\tools\protobuf-c``` to PATH environment variable. Maybe this is necessary even if the above is fixed?
 
- .\vcpkg.exe integrate install
+If you use VSCode, add this to your settings (press ```Ctrl+,```) to open settings in UI mode. Switch to json text mode by clickin the first of the 3 icons on the top right-hand side (the one looking like a file).
+Add this to the ```settings.json```:
+```json
+{
+    "cmake.configureSettings": {
+            "CMAKE_TOOLCHAIN_FILE": "[path to vcpkg]/scripts/buildsystems/vcpkg.cmake"
+        }
+}
+```
+Then let VSCode do all the magic for you!
 
-https://www.40tude.fr/how-to-use-vcpkg-with-vscode-and-cmake/
+To build with CMake manually do this in the workdirectory:
+```powershell
+mkdir build
+cd build
+cmake "-DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake" ..
+cmake --build .
+```
 
-add C:\vcpkg\installed\x64-windows\tools\protobuf-c to PATH
