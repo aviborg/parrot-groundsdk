@@ -22,11 +22,12 @@ add_subdirectory(libh265)
 add_subdirectory(libmedia-buffers)
 add_subdirectory(libvideo-defs)
 add_subdirectory(libvideo-metadata)
+add_subdirectory(pdraw)
 
 target_link_libraries(parrot-client 
-                        PUBLIC 
                         ulog
                         pomp
                         futils 
+                        pdraw-vsink
                         parrot-client_compiler_flags
 )
