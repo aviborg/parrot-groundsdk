@@ -7,6 +7,12 @@ This has been done:
 
 Running CMake on the top level creates an ```parrot-client.exe``` for test purposes
 
+Don't forget to run
+```powershell
+git submodule update --init --recursive
+```
+after cloning this repository!
+
 Mingw-x64 gcc must be installed and used. Below is a good guide to follow. Consider installing VSCode too.
 
 https://code.visualstudio.com/docs/cpp/config-mingw
