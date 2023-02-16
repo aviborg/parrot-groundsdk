@@ -40,3 +40,15 @@
 [submodule "libtransport-packet"]
 	path = libtransport-packet
 	url = git@github.com:aviborg/libtransport-packet.git
+[submodule "libvideo-decode"]
+	path = libvideo-decode
+	url = git@github.com:aviborg/libvideo-decode.git
+[submodule "libvideo-scale"]
+	path = libvideo-scale
+	url = git@github.com:aviborg/libvideo-scale.git
+[submodule "libvideo-streaming"]
+	path = libvideo-streaming
+	url = git@github.com:aviborg/libvideo-streaming.git
+[submodule "libvideo-encode"]
+	path = libvideo-encode
+	url = git@github.com:aviborg/libvideo-encode.git
