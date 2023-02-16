@@ -26,14 +26,15 @@ add_subdirectory(librtsp)
 add_subdirectory(libsdp)
 add_subdirectory(libtransport-packet)
 add_subdirectory(libtransport-socket)
-add_subdirectory(libulog)
 add_subdirectory(libvideo-decode)
 add_subdirectory(libvideo-defs)
 add_subdirectory(libvideo-encode)
 add_subdirectory(libvideo-metadata)
 add_subdirectory(libvideo-scale)
 add_subdirectory(libvideo-streaming)
+add_subdirectory(libyuv)
 add_subdirectory(pdraw)
+add_subdirectory(ulog)
 
 target_link_libraries(parrot-client 
                         ulog
