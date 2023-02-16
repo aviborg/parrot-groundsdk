@@ -52,3 +52,6 @@
 [submodule "libvideo-encode"]
 	path = libvideo-encode
 	url = git@github.com:aviborg/libvideo-encode.git
+[submodule "ulog"]
+	path = ulog
+	url = git@github.com:aviborg/ulog.git
