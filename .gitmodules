@@ -22,3 +22,21 @@
 [submodule "libh264"]
 	path = libh264
 	url = git@github.com:aviborg/libh264.git
+[submodule "libmp4"]
+	path = libmp4
+	url = git@github.com:aviborg/libmp4.git
+[submodule "libsdp"]
+	path = libsdp
+	url = git@github.com:aviborg/libsdp.git
+[submodule "librtp"]
+	path = librtp
+	url = git@github.com:aviborg/librtp.git
+[submodule "librtsp"]
+	path = librtsp
+	url = git@github.com:aviborg/librtsp.git
+[submodule "libtransport-socket"]
+	path = libtransport-socket
+	url = git@github.com:aviborg/libtransport-socket.git
+[submodule "libtransport-packet"]
+	path = libtransport-packet
+	url = git@github.com:aviborg/libtransport-packet.git
