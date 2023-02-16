@@ -6,7 +6,8 @@ https://stackoverflow.com/questions/70197831/unable-to-determine-what-cmake-gene
 
 
 https://github.com/Microsoft/vcpkg/
-.\vcpkg.EXE install json-c protobuf-c[tools] eigen3 --triplet=x64-windows
+.\vcpkg.EXE install json-c protobuf-c[tools] eigen3 libyuv --triplet=x64-windows
+.\vcpkg.exe install ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale]:x64-windows
 
 If it fails (see here: https://github.com/microsoft/vcpkg/issues/29677)
 do this patch in your vcpkg directory
@@ -25,6 +26,9 @@ index 0a972cb27..4bcce7017 100644
      )
  endif()
 ```
+
+https://github.com/microsoft/vcpkg/issues/28446
+
  .\vcpkg.exe integrate install
 
 https://www.40tude.fr/how-to-use-vcpkg-with-vscode-and-cmake/
