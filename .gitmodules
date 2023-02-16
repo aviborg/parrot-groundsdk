@@ -55,3 +55,6 @@
 [submodule "ulog"]
 	path = ulog
 	url = git@github.com:aviborg/ulog.git
+[submodule "libyuv"]
+	path = libyuv
+	url = git@github.com:aviborg/libyuv.git
