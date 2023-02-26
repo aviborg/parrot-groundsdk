@@ -85,3 +85,5 @@ cmake "-DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake" 
 cmake --build .
 ```
 
+## Linux
+./vcpkg install ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale]:x64-linux-dynamic
