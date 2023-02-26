@@ -34,7 +34,7 @@ add_subdirectory(libvideo-scale)
 add_subdirectory(libvideo-streaming)
 add_subdirectory(libyuv)
 add_subdirectory(pdraw)
-add_subdirectory(ulog)
+add_subdirectory(libulogX)
 
 target_link_libraries(parrot-client 
                         ulog

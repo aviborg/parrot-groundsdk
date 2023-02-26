@@ -21,8 +21,9 @@
 #define ULOG_DEBUG 0
 #define ULOG_INFO 0
 #define ULOG_ERR 3
+#define ULOG_EVT
 #define ULOG_CRIT 2
 #define ULOG_WARN 1
-#define ULOG_UNLIKELY 0
+#define ULOG_UNLIKELY(...) 0
 
 #endif //_PARROT_ULOG_

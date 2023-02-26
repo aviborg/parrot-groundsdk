@@ -1,5 +1,7 @@
 # parrot-groundsdk
 
+## Windows
+
 This is an adaptation of the parrot groundsdk to run on Windows. But as CMake is used it should compile on Linux too, not tested though.
 This has been done:
 - Some code fixes
@@ -86,4 +88,14 @@ cmake --build .
 ```
 
 ## Linux
-./vcpkg install ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale]:x64-linux-dynamic
+
+```shell
+sudo apt install -y cmake gcc g++ gdb curl pkg-config ninja-build nasm
+mkdir [path to vcpkg]
+cd [path to vcpkg]
+git clone https://github.com/microsoft/vcpkg
+./vcpkg/bootstrap-vcpkg.sh
+./vcpkg/vcpkg install json-c eigen3 protobuf-c[tools]
+./vcpkg/vcpkg install ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale]
+
+./vcpkg/vcpkg integrate install
