@@ -4,6 +4,7 @@
 [submodule "libfutils"]
 	path = libfutils
 	url = git@github.com:aviborg/libfutils.git
+	branch = master
 [submodule "libpomp"]
 	path = libpomp
 	url = git@github.com:aviborg/libpomp.git
