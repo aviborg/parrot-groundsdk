@@ -58,5 +58,3 @@
 [submodule "libyuv"]
 	path = libyuv
 	url = git@github.com:aviborg/libyuv.git
-[submodule "libfutils/"]
-	branch = master
