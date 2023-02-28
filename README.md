@@ -96,6 +96,6 @@ cd [path to vcpkg]
 git clone https://github.com/microsoft/vcpkg
 ./vcpkg/bootstrap-vcpkg.sh
 ./vcpkg/vcpkg install json-c eigen3 protobuf-c[tools]
-./vcpkg/vcpkg install ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale]
+./vcpkg/vcpkg install ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale,zlib]
 
 ./vcpkg/vcpkg integrate install
