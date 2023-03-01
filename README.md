@@ -36,7 +36,7 @@ git clone https://github.com/microsoft/vcpkg
 ```
 Take some coffee as the above will take a while.
 ```powershell
-.\vcpkg.exe install protobuf-c[tools] --triplet=x64-mingw-static
+.\vcpkg.exe install protobuf-c[tools] --triplet=x64-windows
 ```
 If it fails (see here: https://github.com/microsoft/vcpkg/issues/29677)
 
