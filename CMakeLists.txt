@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(parrot_client VERSION 1.0)
 
+
 add_executable(${PROJECT_NAME} src/parrot-client.cpp)
 target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_11)
 
@@ -9,30 +10,14 @@ target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_11)
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 
 
-if (APPLE)
-  set(rbase "@loader_path")
-else ()
-  set(rbase "\$ORIGIN")
-endif ()
+# cmake_path(GET "install_setup.cmake" FILENAME )
+set(install_setup_script "install_setup.cmake")
 
-set(CMAKE_SKIP_BUILD_RPATH FALSE)
+message(${install_setup_script})
 
-# when building, don't use the install RPATH already
-# (but later on when installing)
-set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
+include(${install_setup_script})
+set_up_rpath()
 
-file(RELATIVE_PATH lib_dir
-    "${CMAKE_INSTALL_PREFIX}/bin"
-    "${CMAKE_INSTALL_PREFIX}/lib")
-
-set(CMAKE_INSTALL_RPATH "${rbase};${rbase}/${lib_dir}"
-    CACHE STRING "Install RPATH")
-
-message("install path is ${CMAKE_INSTALL_RPATH}")
- 
-# add the automatically determined parts of the RPATH
-# which point to directories outside the build tree to the install RPATH
-set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 
 
@@ -79,10 +64,14 @@ target_include_directories(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME}
+    PRIVATE
     ulog
     pomp
     futils
     pdraw-vsink
+    pdraw
+    media-buffers
+    media-buffers-memory-generic
 )
 
 install(TARGETS ${PROJECT_NAME}
