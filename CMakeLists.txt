@@ -1,22 +1,24 @@
 cmake_minimum_required(VERSION 3.15)
 project(parrot_client VERSION 1.0)
 
+# cmake_path(GET "install_setup.cmake" FILENAME )
+set(install_setup_script "install_setup.cmake")
+include(${install_setup_script})
 
 add_executable(${PROJECT_NAME} src/parrot-client.cpp)
 target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_11)
+
+# checks if set up rpath exists for install 
+if(COMMAND set_up_rpath)
+    set_up_rpath()
+else()
+    message("Set up rpath not defined!")
+endif()
 
 # specify the C++ standard
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 
-
-# cmake_path(GET "install_setup.cmake" FILENAME )
-set(install_setup_script "install_setup.cmake")
-
-message(${install_setup_script})
-
-include(${install_setup_script})
-set_up_rpath()
 
 
 
