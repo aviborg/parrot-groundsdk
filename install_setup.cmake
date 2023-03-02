@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-
 macro(set_up_rpath)
-
     message("Setting up rpath for ${PROJECT_NAME}")
     if (APPLE)
       set(rbase "@loader_path")
