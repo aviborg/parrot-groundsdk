@@ -15,11 +15,7 @@ set(install_setup_script "install_setup.cmake")
 
 message(${install_setup_script})
 
-include(${install_setup_script})
 set_up_rpath()
-
-
-
 
 # control where the static and shared libraries are built so that on windows
 # we don't need to tinker with the path to run the executable
