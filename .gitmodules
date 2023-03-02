@@ -58,3 +58,6 @@
 [submodule "libyuv"]
 	path = libyuv
 	url = git@github.com:aviborg/libyuv.git
+[submodule "protobuf-c"]
+	path = protobuf-c
+	url = git@github.com:aviborg/protobuf-c.git
