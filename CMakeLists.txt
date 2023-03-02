@@ -13,8 +13,7 @@ option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 # cmake_path(GET "install_setup.cmake" FILENAME )
 set(install_setup_script "install_setup.cmake")
 
-message(${install_setup_script})
-
+include(${install_setup_script})
 set_up_rpath()
 
 # control where the static and shared libraries are built so that on windows
