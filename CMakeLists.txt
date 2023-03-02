@@ -35,6 +35,7 @@ add_subdirectory(libvideo-streaming)
 add_subdirectory(libyuv)
 add_subdirectory(pdraw)
 add_subdirectory(ulog)
+add_subdirectory(protobuf-c/build-cmake)
 
 target_link_libraries(parrot-client 
                         ulog
