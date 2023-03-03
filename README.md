@@ -1,5 +1,7 @@
 # parrot-groundsdk
 
+## Windows
+
 This is an adaptation of the parrot groundsdk to run on Windows. But as CMake is used it should compile on Linux too, not tested though.
 This has been done:
 - Some code fixes
@@ -30,12 +32,11 @@ mkdir [path to vcpkg]
 cd [path to vcpkg]
 git clone https://github.com/microsoft/vcpkg
 .\vcpkg\bootstrap-vcpkg.bat
-.\vcpkg.exe install json-c eigen3 --triplet=x64-windows
-.\vcpkg.exe install ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale]:x64-windows
+.\vcpkg.exe install json-c eigen3 ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale,zlib] --triplet=x64-windows
 ```
 Take some coffee as the above will take a while.
 ```powershell
-.\vcpkg.exe install protobuf-c[tools]
+.\vcpkg.exe install protobuf-c[tools] --triplet=x64-windows
 ```
 If it fails (see here: https://github.com/microsoft/vcpkg/issues/29677)
 
@@ -85,3 +86,15 @@ cmake "-DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake" 
 cmake --build .
 ```
 
+## Linux
+
+```shell
+sudo apt install -y cmake gcc g++ gdb curl pkg-config ninja-build nasm
+mkdir [path to vcpkg]
+cd [path to vcpkg]
+git clone https://github.com/microsoft/vcpkg
+./vcpkg/bootstrap-vcpkg.sh
+./vcpkg/vcpkg install json-c eigen3 protobuf-c[tools]
+./vcpkg/vcpkg install ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale,zlib]
+
+./vcpkg/vcpkg integrate install
