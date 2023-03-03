@@ -7,6 +7,8 @@ target_include_directories(ulog INTERFACE
                             $<INSTALL_INTERFACE:include>
 )
 
+target_link_libraries(libulog rt)
+
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
     "${PROJECT_BINARY_DIR}/ulogConfigVersion.cmake"
