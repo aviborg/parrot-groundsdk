@@ -24,6 +24,8 @@ You also need to add the MingW-CMake:
 pacman -S mingw-w64-x86_64-cmake
 ```
 
+https://learn.microsoft.com/en-us/vcpkg/users/platforms/mingw
+
 Then you need vcpkg and some packages. How to install vcpkg is described [here](https://github.com/Microsoft/vcpkg/) but it is just a few powershell commands.
 
 Microsoft recommend vcpkg to be installed somewhere like C:\src\vcpkg or C:\dev\vcpkg, since otherwise you may run into path issues for some port build systems.
