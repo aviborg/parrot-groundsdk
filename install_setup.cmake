@@ -23,7 +23,7 @@ ENDMACRO()
 
 	macro(set_up_rpath)
 	  if(WIN32)
-	    message(STATUS "Can't set rpath for windows")
+	    #message(STATUS "Can't set rpath for windows")
 	  elseif(CMAKE_INSTALL_PREFIX STREQUAL "/usr/local")
 	    message(STATUS "Not setting rpath since no special install")
 	  else()

@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.15)
-project(parrot_client VERSION 1.0)
+if(WIN32)
+    set(VCPKG_TARGET_TRIPLET "x64-mingw-dynamic")
+    set(VCPKG_HOST_TRIPLET "x64-mingw-dynamic")
+endif()
+project(parrot-client VERSION 1.0)
 
 # cmake_path(GET "install_setup.cmake" FILENAME )
 set(install_setup_script "install_setup.cmake")

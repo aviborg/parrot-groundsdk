@@ -34,11 +34,11 @@ mkdir [path to vcpkg]
 cd [path to vcpkg]
 git clone https://github.com/microsoft/vcpkg
 .\vcpkg\bootstrap-vcpkg.bat
-.\vcpkg.exe install json-c eigen3 ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale,zlib] --triplet=x64-windows
+.\vcpkg.exe install json-c eigen3 ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale,zlib] --triplet=x64-mingw-dynamic
 ```
 Take some coffee as the above will take a while.
 ```powershell
-.\vcpkg.exe install protobuf-c[tools] --triplet=x64-windows
+.\vcpkg.exe install protobuf-c[tools] --triplet=x64-mingw-dynamic
 ```
 If it fails (see here: https://github.com/microsoft/vcpkg/issues/29677)
 
