@@ -65,8 +65,8 @@ endforeach()
 
 target_include_directories(${PROJECT_NAME} 
                           PUBLIC
-                          $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/pdraw/libpdraw-vsink/include/> 
-                          $<INSTALL_INTERFACE:include/> 
+                          $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/pdraw/libpdraw-vsink/include> 
+                          $<INSTALL_INTERFACE:include> 
 )
 
 target_link_libraries(${PROJECT_NAME}

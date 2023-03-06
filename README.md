@@ -67,7 +67,7 @@ Then run
 .\vcpkg.exe integrate install
 ```
 
-if you had the above issue with protobuf-c, add ```[path to vcpkg]\installed\x64-windows\tools\protobuf-c``` to PATH environment variable. Maybe this is necessary even if the above is fixed?
+if you had the above issue with protobuf-c, add ```[path to vcpkg]\installed\x64-mingw-dynamic\tools\protobuf-c``` to PATH environment variable. Maybe this is necessary even if the above is fixed?
 
 If you use VSCode, add this to your settings (press ```Ctrl+,```) to open settings in UI mode. Switch to json text mode by clickin the first of the 3 icons on the top right-hand side (the one looking like a file).
 Add this to the ```settings.json```:
@@ -96,7 +96,6 @@ mkdir [path to vcpkg]
 cd [path to vcpkg]
 git clone https://github.com/microsoft/vcpkg
 ./vcpkg/bootstrap-vcpkg.sh
-./vcpkg/vcpkg install json-c eigen3 protobuf-c[tools]
-./vcpkg/vcpkg install ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale,zlib]
+./vcpkg/vcpkg install json-c eigen3 protobuf-c[tools] ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale,zlib]
 
 ./vcpkg/vcpkg integrate install
