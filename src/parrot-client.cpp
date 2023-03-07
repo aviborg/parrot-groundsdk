@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 		  media_info->video.raw.info.resolution.height,
 		  media_info->video.raw.info.framerate.num,
 		  media_info->video.raw.info.framerate.den);
-	for (i = 0; i < 300; i++)
+	for (i = 0; i < 10; i++)
 	{
 		struct pdraw_video_frame frame_info = {VDEF_FRAME_TYPE_UNKNOWN};
 		struct mbuf_raw_video_frame *frame = NULL;
