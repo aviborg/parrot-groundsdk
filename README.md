@@ -1,7 +1,7 @@
 # parrot-groundsdk
 
 
-This is an adaptation of the parrot groundsdk to run on Windows, but as CMake is used it compiles on Linux too.
+This is an adaptation of the parrot groundsdk to run on Windows, but as CMake is used it, compiles on Linux too.
 This has been done:
 - Some code fixes
 - Most of the work has been to translate the ```atom.mk``` files to ```CMakeLists.txt``` build files.
@@ -11,6 +11,7 @@ This has been done:
 ```powershell
 git clone [path-to-this-repo]
 git submodule update --init --recursive
+git submodule foreach "git switch master"
 ```
 
 ## Windows
