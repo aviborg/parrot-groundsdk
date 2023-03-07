@@ -114,7 +114,8 @@ cmake --build . --target install
 
 ## Test
 
-You may test the application when built like this:
+You may test the application with the following file [https://drive.google.com/file/d/1FjdZM7qyQEJHX9SPQCBFUkr0ptrn5vO1/view?usp=sharing](https://drive.google.com/file/d/1FjdZM7qyQEJHX9SPQCBFUkr0ptrn5vO1/view?usp=sharing)
+
 ```powershell
-./install/bin/parrot.exe examples/P0260026.MP4
+./install/bin/parrot.exe P0260026.MP4
 ```
