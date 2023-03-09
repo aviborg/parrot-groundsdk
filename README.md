@@ -71,8 +71,6 @@ Then run
 .\vcpkg.exe integrate install
 ```
 
-You need to add ```[path to vcpkg]\installed\x64-mingw-dynamic\tools\protobuf-c``` to the PATH environment variable in order for the protobuf generator to find protoc-gen-c executable.
-
 ## Linux
 
 To run on Linux it is only a few shell commands:
@@ -87,7 +85,7 @@ git clone https://github.com/microsoft/vcpkg
 ~/vcpkg integrate install
 
 ```
-You need to add ```[path to vcpkg]/installed/x64-linux/tools/protobuf-c``` to the PATH 
+
 ## VS Code
 
 If you use VSCode, add this to your settings (press ```Ctrl+,```) to open settings in UI mode. Switch to json text mode by clickin the first of the 3 icons on the top right-hand side (the one looking like a file).
