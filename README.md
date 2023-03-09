@@ -106,7 +106,7 @@ To build with CMake manually do this in the workdirectory:
 mkdir build
 mkdir install
 cd build
-cmake "-DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake" "-DCMAKE_INSTALL_PREFIX=../install" ..
+cmake "-DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake" "-DCMAKE_INSTALL_PREFIX=../install" "-DCMAKE_C_COMPILER:FILEPATH=C:/msys64/mingw64/bin/gcc.exe" "-DCMAKE_CXX_COMPILER:FILEPATH=C:/msys64\mingw64/bin/g++.exe" ..
 cmake --build .
 cmake --build . --target install
 ```
