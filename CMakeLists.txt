@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.15)
 if(WIN32)
     set(VCPKG_TARGET_TRIPLET "x64-mingw-dynamic")
     set(VCPKG_HOST_TRIPLET "x64-mingw-dynamic")
+elseif(UNIX)
+    set(VCPKG_TARGET_TRIPLET "x64-linux-dynamic")
+    set(VCPKG_HOST_TRIPLET "x64-linux-dynamic")
 endif()
 project(parrot-client VERSION 1.0)
 
@@ -79,6 +82,19 @@ target_link_libraries(${PROJECT_NAME}
     media-buffers
     media-buffers-memory-generic
 )
+
+if(WIN32)
+    list(APPEND mingw_dependencies 
+                    libgcc_s_seh-1.dll
+                    libstdc++-6.dll
+                    libwinpthread-1.dll
+    )
+    get_filename_component(DEPENDENCY_PATH ${CMAKE_C_COMPILER} DIRECTORY)
+    foreach(dll_file IN LISTS mingw_dependencies)
+        install(FILES ${DEPENDENCY_PATH}/${dll_file} DESTINATION bin)
+    endforeach()
+
+endif()
 
 install(TARGETS ${PROJECT_NAME}
     EXPORT ${PROJECT_NAME}-targets

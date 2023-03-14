@@ -80,7 +80,7 @@ sudo apt install -y cmake gcc g++ gdb curl pkg-config ninja-build nasm
 cd ~
 git clone https://github.com/microsoft/vcpkg
 ./vcpkg/bootstrap-vcpkg.sh
-./vcpkg/vcpkg install json-c eigen3 protobuf-c[tools] ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale,zlib]
+./vcpkg/vcpkg install json-c eigen3 protobuf-c[tools] ffmpeg[avcodec,avdevice,avfilter,avformat,swresample,swscale,zlib] --triplet=x64-linux-dynamic
 
 ~/vcpkg integrate install
 
