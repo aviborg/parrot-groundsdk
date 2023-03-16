@@ -56,11 +56,11 @@ macro(set_up_rpath)
 			set(rbase "\\\$ORIGIN;\\\$ORIGIN/../lib")
 		endif ()
 
-		# set(CMAKE_SKIP_BUILD_RPATH FALSE)
+		set(CMAKE_SKIP_BUILD_RPATH FALSE)
 
 	# 	# when building, don't use the install RPATH already
 	# 	# (but later on when installing)
-		# set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
+		set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
 
 	# 	file(RELATIVE_PATH lib_dir
 	# 		"${CMAKE_INSTALL_PREFIX}/bin"
